@@ -8,9 +8,13 @@
 			if (document.getElementById('edu-nor').style.display == '') {
 				document.getElementById('edu-nor').style.display = 'none';
 				document.getElementById('edu-sp').style.display = '';
+				document.getElementById('edu-nor').name = '';
+				document.getElementById('edu-sp').name = 'edu';
 			} else {
 				document.getElementById('edu-nor').style.display = '';
 				document.getElementById('edu-sp').style.display = 'none';
+				document.getElementById('edu-nor').name = 'edu';
+				document.getElementById('edu-sp').name = '';
 			}
 		}
 		</script>
@@ -84,7 +88,7 @@
 							<option value="sen">高中(JK)</option>
 							<option value="uni">大學(??)</option>
 						</select>
-						<select name="edu" id="edu-sp" style="display: none;">
+						<select id="edu-sp" style="display: none;">
 							<option value="">!!!選!!!</option>
 							<option value="ele">國小(JS)</option>
 							<option value="jun">國中(JC)</option>
