@@ -6,8 +6,88 @@
 	</head>
 
 	<body align="center">
+		<div style="width: 300px;margin: auto;text-align: left;">
+			<ol>
+				<li>
+					舉例
+					<ul>
+						<li>說明</li>
+						<li>測試</li>
+					</ul>
+				</li>
+				<li>
+					栗子
+					<ul>
+						<li><font face="Lucida Grande">🌰</font> <small>&lt;- Maybe Safari@OS X only :-)</small></li>
+						<li>
+							梨子
+							<ol>
+								<li>
+									想不到了 _(:з」∠)_
+								</li>
+							</ol>
+						</li>
+					</ul>
+				</li>
+			</ol>
+			<ul>
+				<li>
+					大概沒啥東西了
+					<ol>
+						<li>還是塞了點</li>
+						<li>
+							可能沒了
+							<ul>
+								<li>
+									結果還有一層
+									<ul>
+										<li>又有一層</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ol>
+				</li>
+			</ul>
+		</div>
 		<form name="list">
-			
+			<table align="center">
+				<tr>
+					<td>姓名</td>
+					<td><input name="name" type="text" /></td>
+				</tr>
+				<tr>
+					<td>姓別</td>
+					<td>
+						<input type="radio" name="sex" id="sex-male" value="male" /><label for="sex-male">男</label>&nbsp;
+						<input type="radio" name="sex" id="sex-female" value="female" /><label for="sex-female">女</label>
+					</td>
+				</tr>
+				<tr>
+					<td>學歷</td>
+					<td>
+						<select name="edu">
+							<option>!!!選!!!</option>
+							<option value="ele">國小</option>
+							<option value="jun">國中</option>
+							<option value="sen">高中</option>
+							<option value="uni">大學</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>興趣</td>
+					<td>
+						<input type="checkbox" name="inst" value="sleep" id="inst-sleep"><label for="inst-sleep">睡覺</label>
+						<input type="checkbox" name="inst" value="eat" id="inst-eat"><label for="inst-eat">吃吃</label>
+						<input type="checkbox" name="inst" value="play" id="inst-play"><label for="inst-play">鬼混</label>
+						<input type="checkbox" name="inst" value="non" id="inst-non"><label for="inst-non">放空</label>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="reset" value="重設" /><input type="submit" value="送出" /></td>
+				</tr>
+			</table>
 		</form>
 	</body>
 </html>
