@@ -135,6 +135,10 @@ html, body {
 .dock {
 	height: 20%;
 }
+.dock-bg {
+	height: 500%;
+	margin-top: -60%;
+}
 .dock-cont {
 	padding: 1.5% 10%;
 }
