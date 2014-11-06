@@ -53,17 +53,34 @@ html, body {
 	overflow: hidden;
 }
 
-.dot-holder {
+.dot-holder-container {
 	position: absolute;
-	height: 3%;
+	bottom: 16.667%;
 	width: 6%;
 	left: 47%;
 	bottom: 16.667%;
 }
+.dot-holder-wrap {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+}
+.dot-holder-wrap:after {
+	content: '';
+	display: block;
+	margin-top: 50%;
+}
+.dot-holder {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
 .dot {
-	width: 20%;
-	height: 40%;
-	margin:	15%;
+	width: 30%;
+	height: 60%;
+	margin:	15% 10%;
 	background-color: rgba(115, 115, 115, 0.75);
 	border-radius: 50%;
 	float: left;
@@ -149,6 +166,10 @@ html, body {
 
 .pane {
 	height: 80%;
+}
+
+.dot-holder-container {
+	bottom: 20%;
 }
 
 .dock {
