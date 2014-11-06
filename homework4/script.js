@@ -2,7 +2,7 @@ document.addEventListener('touchstart', handleTouchStart, false);
 document.addEventListener('touchmove', handleTouchMove, false);
 
 document.addEventListener('mousedown', handleMouseDown, false);       
-document.addEventListener('mousemove', handleMouseMove, false);
+document.addEventListener('mouseup', handleMouseUp, false);
 
 var dragStartPoint = null;
 
@@ -20,7 +20,7 @@ function handleMouseDown(evt) {
     dragStartPoint = evt;
 };
 
-function handleMouseMove(evt) {
+function handleMouseUp(evt) {
     if (! dragStartPoint) return;
     changePage(dragStartPoint.clientX - evt.clientX);
     dragStartPoint = null;
