@@ -29,9 +29,18 @@ function handleMouseUp(evt) {
 
 function changePage(way) {
 	var pane = document.getElementById("pane");
+	var dots = document.getElementsByClassName("dot");
     if (way > 0) { // left swipe - to right page
     	pane.style.marginLeft = '-100%';
+    	setTimeout(function() {
+	    	dots[0].className = 'dot';
+    		dots[1].className = 'dot active';
+    	}, 900);
     } else { // right swipe - to left page
     	pane.style.marginLeft = '0';
+    	setTimeout(function() {
+	    	dots[0].className = 'dot active';
+    		dots[1].className = 'dot';
+    	}, 900);
     }
 }

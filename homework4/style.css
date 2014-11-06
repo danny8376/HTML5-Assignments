@@ -53,6 +53,25 @@ html, body {
 	overflow: hidden;
 }
 
+.dot-holder {
+	position: absolute;
+	height: 3%;
+	width: 6%;
+	left: 47%;
+	bottom: 16.667%;
+}
+.dot {
+	width: 20%;
+	height: 40%;
+	margin:	15%;
+	background-color: rgba(115, 115, 115, 0.75);
+	border-radius: 50%;
+	float: left;
+}
+.dot.active {
+	background-color: rgb(250, 250, 250);
+}
+
 .dock {
 	position: relative;
 	width: 100%;
