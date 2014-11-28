@@ -1,0 +1,27 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	overflow: hidden;
+}
+
+#sel {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#disp {
+	position: absolute;
+	top: 24px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+#view {
+	height: 100%;
+	width: 100%;
+}
