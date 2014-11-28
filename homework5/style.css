@@ -1,0 +1,66 @@
+nav ul {
+	list-style-type: none;
+	text-align: center;
+}
+
+nav li {
+	display: inline;
+	padding: 0.3em 0.7em;
+	background-color: lightblue;
+	border-radius: 8px;
+	color: white;
+	cursor: pointer;
+}
+
+nav li:hover {
+	background-color: blue;
+}
+
+nav li.current {
+	background-color: blue;
+}
+
+div.wrap {
+	margin: auto;
+	max-width: 960px;
+}
+
+div.title {
+	float: left;
+	width: 100%;
+	text-align: center;
+	border: 1px solid lightblue;
+	border-bottom: 0px;
+}
+
+div.intro {
+	float: left;
+	width: 30%;
+	height: 330px;
+	border: 1px solid lightgray;
+	border-right: 0px;
+	margin-right: -1px;
+}
+
+div.cont {
+	float: left;
+	width: 70%;
+	height: 330px;
+	text-align: center;
+	border: 1px solid lightgray;
+	margin-right: -2px;
+}
+
+div.cont iframe {
+	margin-top: 5px;
+}
+
+div.copyright {
+	float: left;
+	width: 100%;
+	text-align: center;
+	font-size: 0.8em;
+	font-style: italic;
+	border: 1px solid lightgray;
+	border-top: 0px;
+}
