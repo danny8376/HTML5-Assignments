@@ -1,21 +1,18 @@
 var view = document.getElementById("view");
 var view2d = view.getContext("2d");
-var loaded = false;
 var chara = new Image();
 chara.src = "chara.png";
+
+var stepTimeout = null;
+var stepUpdating = false;
 
 var step = 0;
 var way = 0;
 var chara_x = 272;
-var chara_y = 192;
-function drawChara() {
-    initDraw();
-    view2d.drawImage(chara, step * 96, way * 96, 96, 96, chara_x, chara_y, 96, 96);
-    loaded = true;
-}
+var chara_y = 288;
 
 chara.onload = function() {
-    drawChara();
+    update();
 };
 
 
@@ -23,41 +20,64 @@ window.addEventListener('keydown', keyDown, true);
 window.addEventListener('keyup', keyUp, true);
 
 
-var lr_pressed = 0; // left: 1 right: 2
-var ud_pressed = 0; // up: 1   down: 2
+var lr_pressed = 0; // left: -1 right: 1
+var ud_pressed = 0; // up: -1   down: 1
 
 function keyProcess(code, press) {
     switch(code) {
         case 37: // left
-            lr_pressed = press ? 1 : 0;
-            way = 1;
+            lr_pressed = press ? -1 : 0;
+            if (press) way = 1;
+            break;
         case 38: // up
-            ud_pressed = press ? 1 : 0;
-            way = 3;
+            ud_pressed = press ? -1 : 0;
+            if (press) way = 3;
+            break;
         case 39: // right
-            lr_pressed = press ? 2 : 0;
-            way = 2;
+            lr_pressed = press ? 1 : 0;
+            if (press) way = 2;
+            break;
         case 40: // down
-            ud_pressed = press ? 2 : 0;
-            way = 0;
+            ud_pressed = press ? 1 : 0;
+            if (press) way = 0;
+            break;
     }
 }
 
 function keyDown(evt) {
+    if (!stepUpdating) updateStep();
     keyProcess(evt.keyCode, true);
 }
 function keyUp(evt) {
     keyProcess(evt.keyCode, false);
+    if (lr_pressed === 0 && ud_pressed === 0) stopStep();
 }
 
+function updateStep() {
+    stepUpdating = true;
+    step = (step + 1) % 4;
+    stepTimeout = setTimeout(updateStep, 250);
+}
+function stopStep() {
+    step = 0;
+    clearTimeout(stepTimeout);
+    stepUpdating = false;
+}
 
 function initDraw() {
     view2d.fillStyle="#FFF";
     view2d.fillRect(0, 0, 640, 480);
 }
-
-function update() {
-
+function drawChara() {
+    initDraw();
+    view2d.drawImage(chara, step * 96, way * 96, 96, 96, chara_x, chara_y, 96, 96);
 }
 
-//setTimeout();
+function update() {
+    chara_x += lr_pressed * 2;
+    chara_y += ud_pressed * 2;
+
+    drawChara();
+
+    setTimeout(update, 50);
+}

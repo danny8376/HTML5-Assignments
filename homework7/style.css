@@ -4,8 +4,6 @@ body {
 }
 
 #view {
-	width: 640px;
-	height: 480px;
-	margin: 64px auto;
+	margin: 32px auto;
 	display: block;
 }
