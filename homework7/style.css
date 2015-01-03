@@ -1,0 +1,11 @@
+body {
+	background-color: wheat;
+	text-align: center;
+}
+
+#view {
+	width: 640px;
+	height: 480px;
+	margin: 64px auto;
+	display: block;
+}
