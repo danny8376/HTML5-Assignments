@@ -24,6 +24,7 @@ var lr_pressed = 0; // left: -1 right: 1
 var ud_pressed = 0; // up: -1   down: 1
 
 function keyProcess(code, press) {
+    var sideway = lr_pressed !== 0 && ud_pressed !== 0
     switch(code) {
         case 37: // left
             lr_pressed = press ? -1 : 0;
@@ -41,6 +42,11 @@ function keyProcess(code, press) {
             ud_pressed = press ? 1 : 0;
             if (press) way = 0;
             break;
+    }
+    // 修正斜走回復正走時方向
+    if (sideway && !press) {
+        if (lr_pressed) way = lr_pressed == -1 ? 1 : 2;
+        if (ud_pressed) way = ud_pressed == -1 ? 3 : 0;
     }
 }
 
