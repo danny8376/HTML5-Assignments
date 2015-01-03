@@ -1,0 +1,32 @@
+body {
+	background-color: wheat;
+}
+
+#in {
+	width: 192px;
+	height: 32px;
+	margin: auto;
+	text-align: center;
+}
+
+#guess {
+	width: 64px;
+}
+
+#msg {
+	width: 256px;
+	height: 32px;
+	margin: auto;
+	text-align: center;
+	font-size: 1.5em;
+	color: purple;
+}
+
+#cnt {
+	width: 64px;
+	margin: auto;
+	margin-top: 128px;
+	text-align: center;
+	font-size: 2em;
+	color: red;
+}
